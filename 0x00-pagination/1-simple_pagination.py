@@ -59,8 +59,10 @@ class Server:
             to the requested page.
         """
         # Verify both arguments
-        assert type(page) is int and page > 0
-        assert type(page_size) is int and page_size > 0
+        assert type(page) is int
+        assert page > 0
+        assert type(page_size) is int
+        assert page_size > 0
 
         # Validate the input parameters
         # assert isinstance(page, int) and page > 0, \
