@@ -49,34 +49,18 @@ class Server:
                  page_size: int = 10) -> List[List]:
         """
         Get a page of the dataset.
-    
+
         Args:
             page (int): The page number to retrieve.
             page_size (int): The number of items per page.
-    
+
         Returns:
             List[List]: A list of rows corresponding
             to the requested page.
         """
         # Verify both arguments
-        # assert type(page) is int and page > 0
-        # assert type(page_size) is int and page_size > 0
-    
-        assert isinstance(page, int)
-        assert isinstance(page_size, int)
-        assert page > 0
-        assert page_size > 0
-    
-        self.dataset()
-    
-        start_index, end_index = index_range(page, page_size)
-    
-        try:
-            dataset = self.dataset()
-            return dataset[start_index:end_index]
-        except IndexError:
-            return []
-
+        assert type(page) is int and page > 0
+        assert type(page_size) is int and page_size > 0
 
         # Validate the input parameters
         # assert isinstance(page, int) and page > 0, \
@@ -85,16 +69,16 @@ class Server:
         # """page_size must be a positive integer"""
 
         # Get the start and end indexes for the requested page
-        # start_index, end_index = index_range(page, page_size)
+        start_index, end_index = index_range(page, page_size)
 
         # Retrieve the dataset
-        # data = self.dataset()
+        data = self.dataset()
 
-        # try:
+        try:
             # Return the slice of the dataset for the requested page
-            # if start_index < len(data):
-                # return data[start_index:end_index]
-            # else:
-                # return []
-        # except IndexError:
-            # return []
+            if start_index < len(data):
+                return data[start_index:end_index]
+            else:
+                return []
+        except IndexError:
+            return []
