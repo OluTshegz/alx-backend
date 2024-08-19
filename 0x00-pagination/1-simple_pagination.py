@@ -78,9 +78,9 @@ class Server:
 
         try:
             # Return the slice of the dataset for the requested page
-            if start_index < len(data):
-                return data[start_index:end_index]
-            else:
-                return []
+            # if start_index < len(data):
+            return data[start_index:end_index]
+            # else:
+                # return []
         except IndexError:
             return []
