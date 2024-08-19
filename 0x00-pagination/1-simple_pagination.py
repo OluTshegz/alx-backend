@@ -68,11 +68,11 @@ class Server:
         # assert isinstance(page_size, int) and page_size > 0, \
         # """page_size must be a positive integer"""
 
-        # Retrieve the dataset
-        data = self.dataset()
-
         # Get the start and end indexes for the requested page
         start_index, end_index = index_range(page, page_size)
+
+        # Retrieve the dataset
+        data = self.dataset()
 
         try:
             # Return the slice of the dataset for the requested page
