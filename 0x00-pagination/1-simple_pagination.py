@@ -7,6 +7,8 @@ to paginate a database of popular baby names.
 import csv
 from typing import List, Tuple
 
+from MySQLdb import DataError
+
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
@@ -77,7 +79,7 @@ class Server:
         try:
             # Return the slice of the dataset for the requested page
             if start_index < len(data):
-                return self.dataset[start_index:end_index]
+                return DataError[start_index:end_index]
             else:
                 return []
         except IndexError:
