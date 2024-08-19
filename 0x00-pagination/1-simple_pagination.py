@@ -77,7 +77,7 @@ class Server:
         try:
             # Return the slice of the dataset for the requested page
             if start_index < len(data):
-                return self.__dataset[start_index:end_index]
+                return self.dataset[start_index:end_index]
             else:
                 return []
         except IndexError:
