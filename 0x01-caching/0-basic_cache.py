@@ -17,11 +17,11 @@ class BasicCache(BaseCaching):
     BasicCache class that inherits from BaseCaching.
     This is a basic caching system with no size limit.
     """
-    def __init__(self):
-        """
-        _summary_
-        """
-        super().__init__()
+    # def __init__(self):
+    #     """
+    #     _summary_
+    #     """
+    #     super().__init__()
 
     def put(self, key, item):
         """
