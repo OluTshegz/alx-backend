@@ -17,11 +17,11 @@ class BasicCache(BaseCaching):
     BasicCache class that inherits from BaseCaching.
     This is a basic caching system with no size limit.
     """
-    # def __init__(self):
-    #     """
-    #     _summary_
-    #     """
-    #     super().__init__()
+    def __init__(self):
+        """
+        _summary_
+        """
+        super().__init__()
 
     def put(self, key, item):
         """
@@ -33,16 +33,16 @@ class BasicCache(BaseCaching):
             None
         """
         # Check if both key and item are not None
-        # if key is not None and item is not None:
-        #     Store the item in the cache dictionary with the provided key
-        #     self.cache_data[key] = item
+        if key is not None and item is not None:
+            # Store the item in the cache dictionary with the provided key
+            self.cache_data[key] = item
 
         # Check if both key and item are None
-        if key is None or item is None:
+        # if key is None or item is None:
             # method should not do anything
-            pass
+            # pass
         # Store the item in the cache dictionary with the provided key
-        self.cache_data[key] = item
+        # self.cache_data[key] = item
 
     def get(self, key):
         """
