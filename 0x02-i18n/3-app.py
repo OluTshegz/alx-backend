@@ -58,4 +58,4 @@ def index():
 
 if __name__ == '__main__':
     # Run the application
-    app.run(debug=True)
+    app.run()
