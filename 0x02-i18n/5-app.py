@@ -48,7 +48,8 @@ def get_user() -> Optional[Dict[str, Optional[str]]]:
     # Get the user ID from the 'login_as' URL parameter
     user_id = request.args.get('login_as')
     
-    # If user_id is present and is in the users dictionary, return the user data
+    # If user_id is present and is in the
+    # users dictionary, return the user data
     if user_id and int(user_id) in users:
         return users[int(user_id)]
     
@@ -59,8 +60,8 @@ def get_user() -> Optional[Dict[str, Optional[str]]]:
 @app.before_request
 def before_request():
     """
-    This function runs before each request and sets the user in the global
-    context if a valid user is logged in.
+    This function runs before each request and sets the user
+    in the global context if a valid user is logged in.
     """
     # Retrieve the user using the get_user function
     g.user = get_user()
@@ -69,18 +70,21 @@ def before_request():
 @babel.localeselector
 def get_locale():
     """
-    Selects the best match language from the client's request or URL parameter.
+    Selects the best match language from
+    the client's request or URL parameter.
 
     Returns:
         str: The selected language/locale.
     """
-    # Check if 'locale' parameter is in the URL and if it matches supported languages
+    # Check if 'locale' parameter is in the URL
+    # and if it matches supported languages
     locale = request.args.get('locale')
     if locale in app.config['LANGUAGES']:
         print(locale)
         return locale
     
-    # If no locale parameter, fall back to the user's preferred language if logged in
+    # If no locale parameter, fall back to the
+    # user's preferred language if logged in
     if g.user and g.user['locale'] in app.config['LANGUAGES']:
         return g.user['locale']
 
@@ -91,7 +95,8 @@ def get_locale():
 @app.route('/')
 def index():
     """
-    The main route that renders the home page template with translated text.
+    The main route that renders the home
+    page template with translated text.
     It displays a custom message if the user is logged in.
     
     Returns:
