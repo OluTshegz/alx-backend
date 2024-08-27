@@ -4,7 +4,7 @@ This module contains a Flask application with Babel integration,
 including localization and translation of text using message IDs.
 """
 
-import babel
+# import babel
 from flask import Flask, render_template, request
 from flask_babel import Babel
 from flask_babel import _, gettext
