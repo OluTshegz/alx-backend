@@ -26,6 +26,6 @@ def index():
 
 
 # Check if the script is executed directly (and not imported as a module).
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # Run the Flask application on the local development server.
-    app.run(debug=True)
+    # app.run(debug=True)
