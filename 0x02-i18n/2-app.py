@@ -4,7 +4,7 @@ This module contains a Flask application with Babel integration
 for handling translations and timezone settings.
 """
 
-import babel
+# import babel
 # Import necessary modules from Flask and Flask-Babel packages.
 from flask import Flask, render_template, request
 from flask_babel import Babel
