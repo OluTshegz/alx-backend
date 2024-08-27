@@ -41,18 +41,18 @@ babel = Babel(app)
 def get_user() -> Optional[Dict[str, Optional[str]]]:
     """
     Retrieves a user dictionary based on the login_as parameter.
-    
+
     Returns:
         dict: The user dictionary if found, otherwise None.
     """
     # Get the user ID from the 'login_as' URL parameter
     user_id = request.args.get('login_as')
-    
+
     # If user_id is present and is in the
     # users dictionary, return the user data
     if user_id and int(user_id) in users:
         return users[int(user_id)]
-    
+
     # If user_id is not valid or not present, return None
     return None
 
@@ -82,7 +82,7 @@ def get_locale():
     if locale in app.config['LANGUAGES']:
         print(locale)
         return locale
-    
+
     # If no locale parameter, fall back to the
     # user's preferred language if logged in
     if g.user and g.user['locale'] in app.config['LANGUAGES']:
@@ -98,7 +98,7 @@ def index():
     The main route that renders the home
     page template with translated text.
     It displays a custom message if the user is logged in.
-    
+
     Returns:
         str: Rendered HTML template for the home page.
     """
