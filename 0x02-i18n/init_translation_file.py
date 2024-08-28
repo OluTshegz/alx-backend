@@ -6,3 +6,7 @@
 
 # # Initialize the French translation file
 # $ pybabel init -i messages.pot -d translations -l fr
+
+# # Compile the translations using
+# $ pybabel compile -d translations
+
