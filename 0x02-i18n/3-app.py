@@ -6,8 +6,7 @@ including localization and translation of text using message IDs.
 
 # import babel
 from flask import Flask, render_template, request
-from flask_babel import Babel
-from flask_babel import _, gettext
+from flask_babel import Babel, gettext
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -52,7 +51,7 @@ def index():
     """
     # Render the template with translated title and header
     return render_template('3-index.html',
-                           title=_("home_title"),
+                           title=gettext("home_title"),
                            header=gettext("home_header"))
 
 
